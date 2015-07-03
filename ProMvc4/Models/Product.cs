@@ -8,6 +8,7 @@ namespace ProMvc4.Models
     public class Product
     {
         private string name;
+        public int ProductID { set; get; }
         public string Name
         {
             get
