@@ -16,7 +16,7 @@ namespace ProMvc4.Controllers
         [ProfileAction]
         public ActionResult Index()
         {
-            HttpClient client = new HttpClient();
+            //HttpClient client = new HttpClient();
             //var httpMessage = await client.GetAsync("");
 
             string controllerName = (string)RouteData.Values["controller"];
@@ -61,7 +61,6 @@ namespace ProMvc4.Controllers
 
         public ViewResult RangeError()
         {
-            
             return View();
         }
     }
