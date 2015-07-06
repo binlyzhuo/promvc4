@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using ProMvc4.Infrastucture;
 
 namespace ProMvc4.Controllers
 {
@@ -11,7 +12,7 @@ namespace ProMvc4.Controllers
     {
         //
         // GET: /Home/
-
+        [Authorize]
         public ActionResult Index()
         {
             HttpClient client = new HttpClient();
@@ -37,5 +38,28 @@ namespace ProMvc4.Controllers
             return View();
         }
 
+        [CustomAuth(true)]
+        public string Hello()
+        {
+            return "Hello mvc4 project!";
+        }
+
+        [RangeException]
+        public string Range(int id)
+        {
+            if(id>100)
+            {
+                return string.Format("The id value is {0}",id);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("id",id,"");
+            }
+        }
+
+        public ViewResult RangeError()
+        {
+            return View();
+        }
     }
 }
