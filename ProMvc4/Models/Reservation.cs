@@ -11,4 +11,16 @@ namespace ProMvc4.Models
         public string ClientName { set; get; }
         public string Location { set; get; }
     }
+
+    public interface IReservationRepository
+    {
+
+    }
+
+    public class ReservationRepository:IReservationRepository
+    {
+
+    }
+
+
 }

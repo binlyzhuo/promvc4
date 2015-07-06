@@ -156,6 +156,7 @@
     <Compile Include="App_Start\NInjectService.cs" />
     <Compile Include="Binders\CartModelBinder.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\RouteDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -166,6 +167,7 @@
     <Compile Include="Infrastucture\RangeExceptionAttribute.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
