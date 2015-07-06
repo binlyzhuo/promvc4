@@ -12,7 +12,8 @@ namespace ProMvc4.Controllers
     {
         //
         // GET: /Home/
-        [Authorize]
+        //[Authorize]
+        [ProfileAction]
         public ActionResult Index()
         {
             HttpClient client = new HttpClient();
@@ -44,7 +45,8 @@ namespace ProMvc4.Controllers
             return "Hello mvc4 project!";
         }
 
-        [RangeException]
+        //[RangeException]
+        [HandleError(ExceptionType = typeof(ArgumentOutOfRangeException), View = "RangeError")]
         public string Range(int id)
         {
             if(id>100)
@@ -59,6 +61,7 @@ namespace ProMvc4.Controllers
 
         public ViewResult RangeError()
         {
+            
             return View();
         }
     }
