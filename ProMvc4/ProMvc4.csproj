@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Infrastucture\CustomAuthAttribute.cs" />
     <Compile Include="Infrastucture\ProfileActionAttribute.cs" />
+    <Compile Include="Infrastucture\ProfileResultAttribute.cs" />
     <Compile Include="Infrastucture\RangeExceptionAttribute.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Product.cs" />
