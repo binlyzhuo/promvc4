@@ -19,5 +19,11 @@ namespace ProMvc4.Controllers
             return View();
         }
 
+
+        public RedirectToRouteResult MyActionResult()
+        {
+            return RedirectToRoute(new {Controller="Home",Action="Index" });
+        }
+
     }
 }
