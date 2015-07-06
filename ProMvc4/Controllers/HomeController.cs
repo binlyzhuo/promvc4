@@ -16,6 +16,8 @@ namespace ProMvc4.Controllers
         {
             HttpClient client = new HttpClient();
             //var httpMessage = await client.GetAsync("");
+
+            string controllerName = (string)RouteData.Values["controller"];
             return View();
         }
 
