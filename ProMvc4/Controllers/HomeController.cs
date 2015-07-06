@@ -27,5 +27,15 @@ namespace ProMvc4.Controllers
             return RedirectToRoute(new {Controller="Home",Action="Index" });
         }
 
+        public HttpStatusCodeResult StatusCode()
+        {
+            return new HttpStatusCodeResult(500, "System error!!");
+        }
+
+        public ActionResult Result()
+        {
+            return View();
+        }
+
     }
 }
