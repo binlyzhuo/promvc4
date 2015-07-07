@@ -29,9 +29,10 @@ namespace ProMvc4.Controllers
         }
 
         [HttpPost]
-        public bool DeleteUser([FromBody]int userid)
+        public HttpResponseMessage DeleteUser([FromBody]int userid)
         {
-            return false;
+            string userName = "";
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
