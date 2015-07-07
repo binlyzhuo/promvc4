@@ -29,6 +29,7 @@ namespace ProMvc4.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public HttpResponseMessage DeleteUser([FromBody]int userid)
         {
             string userName = "";
