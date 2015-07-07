@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WebApi</title>
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //alert('test api');
+            $.get("api/user/getuserinfo", { userid: 1 }, function (d) { });
+            $.get("api/user/getuserinfos", {}, function (d) { });
+            $.post("api/user/DeleteUser", { userid: 1 }, function (d) { });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        
+    </div>
+</body>
+</html>

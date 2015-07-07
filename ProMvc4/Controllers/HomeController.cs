@@ -63,5 +63,10 @@ namespace ProMvc4.Controllers
         {
             return View();
         }
+
+        public ActionResult WebApi()
+        {
+            return View();
+        }
     }
 }
