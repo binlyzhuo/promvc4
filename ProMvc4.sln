@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMvc4", "ProMvc4\ProMvc4.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProMvc4.Tests", "ProMvc4.Tests\ProMvc4.Tests.csproj", "{8EF8A24B-0ACD-4B06-A22A-1FC0A1024E84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllersAndActions", "ControllersAndActions\ControllersAndActions.csproj", "{53408C2E-0ED3-4915-B3EF-F0FF1560C330}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8EF8A24B-0ACD-4B06-A22A-1FC0A1024E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF8A24B-0ACD-4B06-A22A-1FC0A1024E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF8A24B-0ACD-4B06-A22A-1FC0A1024E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53408C2E-0ED3-4915-B3EF-F0FF1560C330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53408C2E-0ED3-4915-B3EF-F0FF1560C330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53408C2E-0ED3-4915-B3EF-F0FF1560C330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53408C2E-0ED3-4915-B3EF-F0FF1560C330}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
