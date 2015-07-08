@@ -15,7 +15,8 @@ namespace ControllersAndActions.Controllers
             string fullUrl = UrlHelper.GenerateContentUrl(Url, context.HttpContext);
             context.HttpContext.Response.Redirect(fullUrl);
 
-            //================
+            
+            //DependencyResolver.Current.GetService
 
         }
     }

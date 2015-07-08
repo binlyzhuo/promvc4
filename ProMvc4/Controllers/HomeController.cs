@@ -8,6 +8,7 @@ using ProMvc4.Infrastucture;
 
 namespace ProMvc4.Controllers
 {
+    [SessionState(System.Web.SessionState.SessionStateBehavior.Disabled)]
     public class HomeController : Controller
     {
         //
