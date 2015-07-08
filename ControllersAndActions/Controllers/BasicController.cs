@@ -19,7 +19,8 @@ namespace ControllersAndActions.Controllers
 
         public void Index()
         {
-
+            //==============
+            //string serverName = 
         }
     }
 }
