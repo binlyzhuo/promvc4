@@ -156,6 +156,7 @@
     <Compile Include="App_Start\NInjectService.cs" />
     <Compile Include="Binders\CartModelBinder.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RemoteController.cs" />
     <Compile Include="Controllers\RemoteDataController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -196,6 +197,7 @@
     <Content Include="Views\Shared\RangeError.cshtml" />
     <Content Include="Views\Home\WebApi.cshtml" />
     <Content Include="Views\RemoteData\Index.cshtml" />
+    <Content Include="Views\Remote\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

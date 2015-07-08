@@ -16,7 +16,7 @@ namespace ProMvc4.Controllers
         {
             RemoteService service = new RemoteService();
             string data = service.GetRemoteData();
-            return View(data);
+            return View((object)data);
         }
 
 

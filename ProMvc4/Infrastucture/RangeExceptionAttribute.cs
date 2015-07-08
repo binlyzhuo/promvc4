@@ -10,19 +10,19 @@ namespace ProMvc4.Infrastucture
     {
         public void OnException(ExceptionContext filterContext)
         {
-            if (!filterContext.ExceptionHandled && filterContext.Exception is ArgumentOutOfRangeException)
-            {
-                //filterContext.Result = new RedirectResult("~/Common/RangeErrorPage.html");
+            //if (!filterContext.ExceptionHandled && filterContext.Exception is ArgumentOutOfRangeException)
+            //{
+            //    //filterContext.Result = new RedirectResult("~/Common/RangeErrorPage.html");
 
-                int val = (int)((ArgumentOutOfRangeException)filterContext.Exception).ActualValue;
+            //    int val = (int)((ArgumentOutOfRangeException)filterContext.Exception).ActualValue;
 
-                filterContext.Result = new ViewResult
-                {
-                    ViewName = "RangeError",
-                    ViewData = new ViewDataDictionary<int>(val)
-                };
-                filterContext.ExceptionHandled = true;
-            }
+            //    filterContext.Result = new ViewResult
+            //    {
+            //        ViewName = "RangeError",
+            //        ViewData = new ViewDataDictionary<int>(val)
+            //    };
+            //    filterContext.ExceptionHandled = true;
+            //}
         }
     }
 }

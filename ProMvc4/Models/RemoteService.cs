@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ProMvc4.Models
 {
@@ -12,6 +13,17 @@ namespace ProMvc4.Models
         {
             Thread.Sleep(2000);
             return "Hello from the other side of the world!";
+        }
+
+        public async Task<string> GetRemoteDataAsync()
+        {
+            //return await Task<string>.Factory.StartNew(() =>
+            //{
+            //    Thread.Sleep(2000);
+            //    return "Hello from the other side of the world!!";
+            //});
+
+            return null;
         }
     }
 }
