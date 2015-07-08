@@ -16,5 +16,9 @@ namespace ControllersAndActions.Controllers
             return View();
         }
 
+        public ActionResult Dir()
+        {
+            return new CustomRedirectResult { Url="/Basic/Index" };
+        }
     }
 }
