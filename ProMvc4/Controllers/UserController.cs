@@ -32,7 +32,7 @@ namespace ProMvc4.Controllers
         [Authorize]
         public HttpResponseMessage DeleteUser([FromBody]int userid)
         {
-            string userName = "";
+            //string userName = "";
             return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
