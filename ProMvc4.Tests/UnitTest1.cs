@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace ProMvc4.Tests
 {
@@ -9,6 +10,7 @@ namespace ProMvc4.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            
         }
     }
 }
