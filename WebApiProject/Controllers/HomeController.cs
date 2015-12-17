@@ -21,6 +21,8 @@ namespace WebApiProject.Controllers
         {
             //===
             //
+            Uri msPage = new Uri("http://www.baidu.com?p=1");
+            int port = msPage.Port;
             return View();
         }
 
@@ -28,7 +30,7 @@ namespace WebApiProject.Controllers
         {
             string url = "http://localhost:2908/api/persons/getperson";
             string data = "ooo";
-            string msg = Post();
+            string msg = GetPost2(url,data);
             Response.Write(msg);
             return View();
         }
@@ -59,10 +61,12 @@ namespace WebApiProject.Controllers
             request = WebRequest.Create(url) as HttpWebRequest;
             request.Timeout = 60000;
             request.KeepAlive = true;
+
+            request.AutomaticDecompression = DecompressionMethods.Deflate;
             System.Net.ServicePointManager.Expect100Continue = false;
 
             request.Method = "POST";
-            request.Headers.Add("Accept-Encoding", "gzip");
+            //request.Headers.Add("Accept-Encoding", "deflate");
             byte[] bdata = Encoding.UTF8.GetBytes(data);
             request.ContentType = "application/json;charset=utf-8";
             request.ContentLength = bdata.Length;
@@ -73,15 +77,17 @@ namespace WebApiProject.Controllers
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream streamIn = response.GetResponseStream();
-            if (response.ContentEncoding.ToLower().Contains("gzip"))
+            if (response.ContentEncoding.ToLower().Contains("deflate"))
             {
-                using (GZipStream steam = new GZipStream(streamIn, CompressionMode.Decompress))
+                using (DeflateStream steam = new DeflateStream(streamIn, CompressionMode.Decompress))
                 {
-                    using (StreamReader reader = new StreamReader(streamIn))
+                    using (StreamReader reader = new StreamReader(streamIn, Encoding.UTF8))
                     {
                         result = reader.ReadToEnd();
                     }
+
                 }
+
             }
             else
             {

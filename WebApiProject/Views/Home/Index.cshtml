@@ -17,7 +17,7 @@
                 type: 'post',
                 dataType: 'json',
                 success: function (d) {
-                    alert(d);
+                    alert(JSON.stringify(d));
                 }
             });
         }
@@ -27,6 +27,7 @@
     <div>
         webapi project
     </div>
+    <div><a href="/home/getpost">GetData</a></div>
     <div>
         <input type="button" value="btn" onclick="get();" />
     </div>

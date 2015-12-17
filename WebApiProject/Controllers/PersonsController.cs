@@ -11,7 +11,7 @@ namespace WebApiProject.Controllers
     public class PersonsController : ApiController
     {
         [HttpPost]
-        //[DeflateCompression2]
+        [DeflateCompression2]
         public List<Person> GetPersons()
         {
             List<Person> personlist = new List<Person>() { 

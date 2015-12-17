@@ -18,9 +18,10 @@ namespace WebApiProject.Controllers
             var zlibbedContent = bytes == null ? new byte[0] :
             CompressionHelper.DeflateByte(bytes);
             actContext.Response.Content = new ByteArrayContent(zlibbedContent);
-            actContext.Response.Content.Headers.Remove("Content-Type");
-            actContext.Response.Content.Headers.Add("Content-encoding", "deflate");
-            actContext.Response.Content.Headers.Add("Content-Type", "application/json");
+            //actContext.Response.Content.Headers.Remove("Content-Type");
+            actContext.Response.Content.Headers.Add("Content-Encoding", "deflate");
+            //actContext.Response.Content.Headers.Add("Content-encoding", "gzip");
+            actContext.Response.Content.Headers.Add("Content-Type", "application/json;charset=utf-8");
             base.OnActionExecuted(actContext);
         }
     }
@@ -41,6 +42,7 @@ namespace WebApiProject.Controllers
                     Ionic.Zlib.CompressionLevel.BestSpeed))
                 {
                     compressor.Write(str, 0, str.Length);
+
                 }
 
                 return output.ToArray();
