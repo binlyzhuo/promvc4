@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        function get() {
+            $.ajax({
+                url: '/api/persons/getperson',
+                data: '111',
+                type: 'post',
+                dataType: 'json',
+                success: function (d) {
+                    alert(d);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        webapi project
+    </div>
+    <div>
+        <input type="button" value="btn" onclick="get();" />
+    </div>
+</body>
+</html>
