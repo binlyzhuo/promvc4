@@ -14,6 +14,7 @@ namespace WebApiProject.Controllers
         public override void OnActionExecuted(HttpActionExecutedContext actContext)
         {
             var content = actContext.Response.Content;
+            var rsp = content.ReadAsStringAsync().Result;
             var bytes = content == null ? null : content.ReadAsByteArrayAsync().Result;
             var zlibbedContent = bytes == null ? new byte[0] :
             CompressionHelper.DeflateByte(bytes);
