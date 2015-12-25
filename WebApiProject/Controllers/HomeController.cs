@@ -45,6 +45,7 @@ namespace WebApiProject.Controllers
             //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage response = client.PostAsync(client.BaseAddress,null).Result;
             string msg="";
+            //var cmp = response.Headers.GetValues("Content-Encoding");
             if (response.IsSuccessStatusCode)
             {
 
@@ -66,7 +67,7 @@ namespace WebApiProject.Controllers
             System.Net.ServicePointManager.Expect100Continue = false;
 
             request.Method = "POST";
-            //request.Headers.Add("Accept-Encoding", "deflate");
+            request.Headers.Add("Accept-Encoding", "deflate");
             byte[] bdata = Encoding.UTF8.GetBytes(data);
             request.ContentType = "application/json;charset=utf-8";
             request.ContentLength = bdata.Length;
@@ -75,27 +76,40 @@ namespace WebApiProject.Controllers
             streamOut.Write(bdata, 0, bdata.Length);
             streamOut.Close();
 
+            var webRequest = request.GetResponse();
+
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            
             Stream streamIn = response.GetResponseStream();
-            if (response.ContentEncoding.ToLower().Contains("deflate"))
-            {
-                using (DeflateStream steam = new DeflateStream(streamIn, CompressionMode.Decompress))
-                {
-                    using (StreamReader reader = new StreamReader(streamIn, Encoding.UTF8))
-                    {
-                        result = reader.ReadToEnd();
-                    }
 
-                }
-
-            }
-            else
+            if(request.AutomaticDecompression == DecompressionMethods.GZip||request.AutomaticDecompression == DecompressionMethods.Deflate)
             {
                 using (StreamReader reader = new StreamReader(streamIn))
                 {
                     result = reader.ReadToEnd();
                 }
             }
+
+
+            //if (response.ContentEncoding.ToLower().Contains("deflate"))
+            //{
+            //    using (DeflateStream steam = new DeflateStream(streamIn, CompressionMode.Decompress))
+            //    {
+            //        using (StreamReader reader = new StreamReader(streamIn, Encoding.UTF8))
+            //        {
+            //            result = reader.ReadToEnd();
+            //        }
+
+            //    }
+
+            //}
+            //else
+            //{
+            //    using (StreamReader reader = new StreamReader(streamIn))
+            //    {
+            //        result = reader.ReadToEnd();
+            //    }
+            //}
 
             streamIn.Close();
             response.Close();

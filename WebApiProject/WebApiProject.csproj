@@ -136,6 +136,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CompressContentAttribute.cs" />
     <Compile Include="Controllers\DeflateCompressionAttribute.cs" />
     <Compile Include="Controllers\DeflateCompression2Attribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />

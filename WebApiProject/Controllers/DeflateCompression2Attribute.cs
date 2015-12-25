@@ -13,14 +13,16 @@ namespace WebApiProject.Controllers
 
         public override void OnActionExecuted(HttpActionExecutedContext actContext)
         {
+            //base.OnActionExecuted(actContext);
             var content = actContext.Response.Content;
+            var cmp = actContext.Request.Headers.GetValues("Accept-Encoding").ToList();
             var rsp = content.ReadAsStringAsync().Result;
             var bytes = content == null ? null : content.ReadAsByteArrayAsync().Result;
             var zlibbedContent = bytes == null ? new byte[0] :
             CompressionHelper.DeflateByte(bytes);
             actContext.Response.Content = new ByteArrayContent(zlibbedContent);
-            //actContext.Response.Content.Headers.Remove("Content-Type");
-            actContext.Response.Content.Headers.Add("Content-Encoding", "deflate");
+            actContext.Response.Content.Headers.Remove("Content-Type");
+            actContext.Response.Content.Headers.Add("Content-encoding", "deflate");
             //actContext.Response.Content.Headers.Add("Content-encoding", "gzip");
             actContext.Response.Content.Headers.Add("Content-Type", "application/json;charset=utf-8");
             base.OnActionExecuted(actContext);
